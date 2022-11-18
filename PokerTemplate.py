@@ -15,10 +15,13 @@ def main():
     
     # Extract the data by using loadtxt and store it in the variable training_data.
     training_data = np.loadtxt(TRAININGDATAFILE, dtype=int, delimiter=',')
+    testing_data = np.loadtxt(TESTDATAFILE, dtype=int, delimiter=',')
 
     # Splice the array of data to separate the labels from the rest of the data.
     train_x = training_data[:, :10]
     train_labels = training_data[:, 10]
+    test_x = testing_data[:, :10]
+    test_labels = testing_data[:,10]
 
 
 if __name__ == '__main__':
