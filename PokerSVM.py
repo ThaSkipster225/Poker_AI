@@ -4,6 +4,7 @@
 # Import Section
 import numpy as np
 import os
+from sklearn import svm
 
 # Define the main function.
 def main():
@@ -22,6 +23,10 @@ def main():
     test_x = testing_data[:, :10]
     test_labels = testing_data[:,10]
 
+    # Training
+    clf = svm.SVC()
+    clf.fit(train_x, train_labels)
+    clf
 
 if __name__ == '__main__':
     main()
