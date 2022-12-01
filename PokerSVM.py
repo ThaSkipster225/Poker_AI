@@ -5,6 +5,8 @@
 import numpy as np
 import os
 from sklearn import svm
+import matplotlib.pyplot as plt
+from sklearn.metrics import accuracy_score
 
 # Define the main function.
 def main():
@@ -26,7 +28,13 @@ def main():
     # Training
     clf = svm.SVC()
     clf.fit(train_x, train_labels)
-    clf
+
+    # Predict
+    classifer_pred = clf.predict(test_x)
+
+    # Get accuracy
+    print(accuracy_score(test_labels, classifer_pred)*100)
+
 
 if __name__ == '__main__':
     main()
