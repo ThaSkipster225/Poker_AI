@@ -33,7 +33,7 @@ def main():
     classifer_pred = clf.predict(test_x)
 
     # Get accuracy
-    print(accuracy_score(test_labels, classifer_pred)*100)
+    print(f'{accuracy_score(test_labels, classifer_pred)*100}% accurate')
 
 
 if __name__ == '__main__':
