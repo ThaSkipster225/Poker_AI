@@ -3,8 +3,12 @@
 # and to use the algorithms we set out to use.
 
 # Import Section
+import matplotlib.pyplot as plt
 import numpy as np
 import os
+import pdb
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.metrics import confusion_matrix
 
 # Define the main function.
 def main():
@@ -23,7 +27,22 @@ def main():
     test_x = testing_data[:, :10]
     test_labels = testing_data[:,10]
 
-    
+    clf = DecisionTreeClassifier(
+        criterion="entropy",
+        splitter="best",
+        max_depth=None,
+        random_state=0
+    )
+    clf.fit(train_x, train_labels)
+
+    #Test the decision tree
+    pred = clf.predict(test_x)
+
+    #Compare training and test accuracy
+    print("Train Accuracy =", np.mean(train_labels == clf.predict(train_x)))
+    print("Test Accuracy =", np.mean(test_labels == pred))
+
+
 
 
 if __name__ == '__main__':
