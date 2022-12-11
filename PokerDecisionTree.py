@@ -31,7 +31,7 @@ def main():
         criterion="entropy",
         splitter="best",
         max_depth=None,
-        random_state=0
+        random_state=10
     )
     clf.fit(train_x, train_labels)
 
@@ -41,6 +41,10 @@ def main():
     #Compare training and test accuracy
     print("Train Accuracy =", np.mean(train_labels == clf.predict(train_x)))
     print("Test Accuracy =", np.mean(test_labels == pred))
+
+    #Visualize the tree using matplotlib and plot_tree
+    plot_tree(clf, max_depth=5, filled=True, fontsize=4)
+    plt.show()
 
 
 
