@@ -1,12 +1,14 @@
-# Support Vector Machine for the classification of Poker Hands.f
-# Coded by Sebastian 'Skippy' Paquette
+# This file serves as the template for the other ones,
+# it has the basics you would need for the other ones 
+# and to use the algorithms we set out to use.
 
 # Import Section
+import matplotlib.pyplot as plt
 import numpy as np
 import os
-from sklearn import svm
-import matplotlib.pyplot as plt
-from sklearn.metrics import accuracy_score
+import pdb
+from sklearn.tree import DecisionTreeClassifier, plot_tree
+from sklearn.metrics import confusion_matrix
 
 # Define the main function.
 def main():
@@ -24,27 +26,27 @@ def main():
     train_labels = training_data[:, 10]
     test_x = testing_data[:, :10]
     test_labels = testing_data[:,10]
-    numoutputs = len(np.unique(train_labels))
 
-    # Training
-    clf = svm.SVC(
-        kernel='poly'
-        , C=0.1
-        , decision_function_shape='ovr'
-        , degree=3
-        )
-
-    print('Beginning Training')
+    clf = DecisionTreeClassifier(
+        criterion="entropy",
+        splitter="best",
+        max_depth=None,
+        random_state=10
+    )
     clf.fit(train_x, train_labels)
-    print('Training Ended')
 
-    # Predict
-    print('Beginning Testing')
-    classifer_pred = clf.predict(test_x)
-    print('Testing ended')
+    #Test the decision tree
+    pred = clf.predict(test_x)
 
-    # Get accuracy
-    print(f'{accuracy_score(test_labels, classifer_pred)*100}% accurate')
+    #Compare training and test accuracy
+    print("Train Accuracy =", np.mean(train_labels == clf.predict(train_x)))
+    print("Test Accuracy =", np.mean(test_labels == pred))
+
+    #Visualize the tree using matplotlib and plot_tree
+    plot_tree(clf, max_depth=5, filled=True, fontsize=4)
+    plt.show()
+
+
 
 
 if __name__ == '__main__':
