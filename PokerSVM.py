@@ -9,7 +9,7 @@ import matplotlib.pyplot as plt
 from sklearn.metrics import accuracy_score
 
 # Define the main function.
-def svm():
+def support():
     # Define our constants
     ROOT = os.path.dirname(os.path.abspath(__file__)) # root directory of this file
     TRAININGDATAFILE = 'poker-hand-training.csv'
@@ -49,4 +49,4 @@ def svm():
 
 
 if __name__ == '__main__':
-    svm()
+    support()

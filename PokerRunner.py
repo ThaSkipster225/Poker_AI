@@ -20,7 +20,7 @@ def main():
             print('\nWould you like to run another algorithm? (1. Decision Trees, 2. Neural Networks, 3. SVMs, q - Quit): ')
         elif (int(uInput) == 3):
             print()
-            PokerSVM.svm()
+            PokerSVM.support()
             print('\nWould you like to run another algorithm? (1. Decision Trees, 2. Neural Networks, 3. SVMs, q - Quit): ')
         elif (uInput.lower() == 'q'):
             print('Exiting application.')
