@@ -29,15 +29,16 @@ def support():
     # Training
     clf = svm.SVC(
         kernel='poly'
-        , C=0.1
+        , C=1.0
         , decision_function_shape='ovr'
         , degree=3
         , verbose=True
         , break_ties=True
+        , gamma='auto'
         )
 
     print('Beginning Training')
-    clf.fit(train_x, train_labels)
+    clf.fit(train_x[:125000], train_labels[:125000])
     print('Training Ended')
 
     # Predict
