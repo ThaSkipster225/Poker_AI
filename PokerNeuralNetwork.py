@@ -17,7 +17,7 @@ from keras.optimizers import SGD
 
 import pdb
 
-def main():
+def Neural():
     # Define our constants
     ROOT = os.path.dirname(os.path.abspath(__file__)) # root directory of this file
     TRAININGDATAFILE = 'poker-hand-training.csv'
@@ -58,4 +58,4 @@ def main():
 
 
 if __name__ == '__main__':
-    main()
+    Neural()
