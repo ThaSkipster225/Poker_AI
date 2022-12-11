@@ -33,10 +33,9 @@ def Neural():
     # numOutputs = len(np.unique(train_x))
     test_x = testing_data[:, :10]
     test_labels = testing_data[:,10]
-    
 
     # Build the Neural Network
-    clf = MLPClassifier(100, 'logistic', solver="adam", max_iter=1000, batch_size=55)
+    clf = MLPClassifier(100, 'logistic', solver="adam", max_iter=1000, batch_size=55, verbose=True)
     clf.fit(train_x, train_labels)
     
     # Score Against Self

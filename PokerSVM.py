@@ -33,6 +33,7 @@ def support():
         , decision_function_shape='ovr'
         , degree=3
         , verbose=True
+        , break_ties=True
         )
 
     print('Beginning Training')
