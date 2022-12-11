@@ -31,7 +31,7 @@ def main():
         kernel='poly'
         , C=0.1
         , decision_function_shape='ovr'
-        , degree=numoutputs
+        , degree=3
         )
 
     print('Beginning Training')
