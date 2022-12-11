@@ -17,6 +17,6 @@ The Neural Networks algorithm was completed by Austin.
 
 The Decision Trees algorithm was completed by AC.
 
-The Support Vector Machines algorithm was completed by Sebastian.
+The Support Vector Machines algorithm was completed by Sebastian 'Skippy'.
 
 
