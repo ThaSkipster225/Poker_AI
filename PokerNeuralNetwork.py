@@ -30,31 +30,42 @@ def Neural():
     # Splice the array of data to separate the labels from the rest of the data.
     train_x = training_data[:, :10]
     train_labels = training_data[:, 10]
-    numOutputs = len(np.unique(train_x))
+    # numOutputs = len(np.unique(train_x))
     test_x = testing_data[:, :10]
     test_labels = testing_data[:,10]
+    
 
     # Build the Neural Network
-    model = Sequential()
-    model.add(Input(train_x))
-    model.add(Dense(units=1000, activation='relu', name='hidden1'))
-    model.add(Dense(units=500, activation='relu', name='hidden2',))
-    model.add(Dense(units=500, activation='relu', name='hidden3'))
-    model.add(Dense(units=numOutputs, activation='softmax', name='output'))
-    model.summary()
+    clf = MLPClassifier(100, 'logistic', solver="adam", max_iter=1000, batch_size=55)
+    clf.fit(train_x, train_labels)
+    
+    # Score Against Self
+    score = (clf.score(test_x, test_labels))*100
+    
+    # Output Results
+    print(f"Accuracy = {score}%")
 
-    callback = KRScb.EarlyStopping(
-        monitor= 'loss',
-        min_delta=1e-2,
-        patience=15,
-        verbose=1
-    )
 
-    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
-    history = model.fit(train_x, train_labels, epochs=100, batch_size=100, callbacks=[callback], verbose=1)
-    metrics = model.evaluate(test_x, test_labels, verbose=0)
+#    model = Sequential()
+#    model.add(Input(train_x))
+#    model.add(Dense(units=1000, activation='relu', name='hidden1'))
+#    model.add(Dense(units=500, activation='relu', name='hidden2',))
+#    model.add(Dense(units=500, activation='relu', name='hidden3'))
+#    model.add(Dense(units=numOutputs, activation='softmax', name='output'))
+#    model.summary()
 
-    print(f'Accuracy = {metrics[1]:0.4f}')
+#    callback = KRScb.EarlyStopping(
+#        monitor= 'loss',
+#        min_delta=1e-2,
+#        patience=15,
+#        verbose=1
+#    )
+
+#    model.compile(loss='categorical_crossentropy', optimizer='adam', metrics=['accuracy'])
+#    history = model.fit(train_x, train_labels, epochs=100, batch_size=100, callbacks=[callback], verbose=1)
+#    metrics = model.evaluate(test_x, test_labels, verbose=0)
+
+#    print(f'Accuracy = {metrics[1]:0.4f}')
 
 
 if __name__ == '__main__':
