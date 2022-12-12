@@ -38,7 +38,7 @@ def support():
         )
 
     print('Beginning Training')
-    clf.fit(train_x[:50000], train_labels[:50000])
+    clf.fit(train_x[:40000], train_labels[:40000])
     print('Training Ended')
 
     # Predict

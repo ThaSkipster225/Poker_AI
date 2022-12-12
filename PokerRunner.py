@@ -7,7 +7,7 @@ import PokerSVM
 import time
 
 def main():
-    print("Welcome to the Poker Classifier, which classification algorithm would you like to run?\n1. Decision Trees\n2. Neural Networks\n3. SVMs (Caution: Takes a little while to finish running)\nPlease enter the number corresponding with your choice: ")
+    print("Welcome to the Poker Classifier, which classification algorithm would you like to run?\n1. Decision Trees\n2. Neural Networks\n3. SVMs (Caution: Takes a little while to finish running - ~5 minutes)\nPlease enter the number corresponding with your choice: ")
 
     while True:
         uInput = input()

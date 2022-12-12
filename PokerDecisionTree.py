@@ -39,7 +39,7 @@ def DecisionTree():
     pred = clf.predict(test_x)
 
     #Compare training and test accuracy
-    print(f'Train Accuracy = {np.mean(train_labels == clf.predict(train_x))*100:.2f}')
+    print(f'Train Accuracy = {np.mean(train_labels == clf.predict(train_x))*100:.2f}%')
     print(f'Test Accuracy = {np.mean(test_labels == pred)*100:.2f}%')
 
     #Visualize the tree using matplotlib and plot_tree
