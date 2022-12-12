@@ -28,13 +28,12 @@ def support():
 
     # Training
     clf = svm.SVC(
-        kernel='poly'
-        , C=1.0
+        kernel='rbf'
+        , C=0.01
         , decision_function_shape='ovr'
-        , degree=3
+        , degree=5
         , verbose=True
         , break_ties=True
-        , gamma='auto'
         )
 
     print('Beginning Training')
