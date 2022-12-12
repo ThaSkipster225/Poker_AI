@@ -42,7 +42,7 @@ def Neural():
     score = (clf.score(test_x, test_labels))*100
     
     # Output Results
-    print(f"Accuracy = {score}%")
+    print(f"Accuracy = {score:.2f}%")
 
 
 #    model = Sequential()
