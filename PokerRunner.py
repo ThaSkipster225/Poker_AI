@@ -11,9 +11,12 @@ def main():
 
     while True:
         uInput = input()
-        if (int(uInput) == 1):
+        if (uInput.lower() == 'q'):
+            print('Exiting application.')
+            break
+        elif (int(uInput) == 1):
             start = time.time()
-            print('Decisition Tree Selected...')
+            print('Decision Tree Selected...')
             PokerDecisionTree.DecisionTree()
             end = time.time()
             print(f'\nTotal elapsed time was {end-start:.2f} seconds.')
@@ -32,9 +35,6 @@ def main():
             end = time.time()
             print(f'\nTotal elapsed time was {end-start:.2f} seconds.')
             print('\nWould you like to run another algorithm? (1. Decision Trees, 2. Neural Networks, 3. SVMs, q - Quit): ')
-        elif (uInput.lower() == 'q'):
-            print('Exiting application.')
-            break
         else:
             print('Unrecognized input. Please try again')
 
