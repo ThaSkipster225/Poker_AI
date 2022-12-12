@@ -31,9 +31,10 @@ def support():
         kernel='rbf'
         , C=0.01
         , decision_function_shape='ovr'
-        , degree=5
+        , degree=5 # Doesn't do anything when the kernel is not in poly
         , verbose=True
         , break_ties=True
+        , gamma='auto'
         )
 
     print('Beginning Training')
@@ -46,7 +47,7 @@ def support():
     print('Testing ended')
 
     # Get accuracy
-    print(f'{accuracy_score(test_labels, classifer_pred)*100}% accurate')
+    print(f'{accuracy_score(test_labels, classifer_pred)*100:.2f}% accurate')
 
 
 if __name__ == '__main__':
