@@ -28,7 +28,7 @@ def support():
 
     # Training
     clf = svm.SVC(
-        kernel='rbf'
+        kernel='poly'
         , C=0.01
         , decision_function_shape='ovr'
         , degree=5 # Doesn't do anything when the kernel is not in poly

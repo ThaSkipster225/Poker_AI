@@ -24,7 +24,9 @@ def main():
     test_labels = testing_data[:,10]
 
     print('Training Length: ', len(train_x))
+    print(train_x)
     print('Testing Length: ', len(test_x))
+    print(train_labels)
 
 if __name__ == '__main__':
     main()
